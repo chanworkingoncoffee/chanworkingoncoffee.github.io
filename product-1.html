@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Bean Bag 1 - Your Coffee Shop Name</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="product-page.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">YOUR SHOP NAME</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#products">Coffee</a>
+                <a href="index.html#location">Visit Us</a>
+                <a href="#" class="cart-icon" onclick="toggleCart()">
+                    🛒 <span id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail">
+        <div class="product-container">
+            
+            <!-- Image Gallery -->
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="main-product-image" src="images/product-1-main.jpg" alt="Coffee Bean Bag 1">
+                </div>
+                <div class="thumbnail-gallery">
+                    <img src="images/product-1-main.jpg" alt="Main view" onclick="changeImage('images/product-1-main.jpg')" class="thumbnail active">
+                    <img src="images/product-1-detail-1.jpg" alt="Detail 1" onclick="changeImage('images/product-1-detail-1.jpg')" class="thumbnail">
+                    <img src="images/product-1-detail-2.jpg" alt="Detail 2" onclick="changeImage('images/product-1-detail-2.jpg')" class="thumbnail">
+                    <img src="images/product-1-detail-3.jpg" alt="Detail 3" onclick="changeImage('images/product-1-detail-3.jpg')" class="thumbnail">
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="product-info">
+                <h1>Coffee Bean Bag 1</h1>
+                <p class="product-price">$XX.XX</p>
+                
+                <div class="product-description">
+                    <h3>Description</h3>
+                    <p>
+                        This is where you describe your coffee in detail. Talk about the flavor profile, 
+                        what makes it special, and why customers will love it. Mention the aroma, body, 
+                        and finish. Share the story behind this particular roast.
+                    </p>
+                    <p>
+                        Add more details here about brewing recommendations, perfect pairings, or what 
+                        time of day this coffee is best enjoyed. The more descriptive and engaging, the better!
+                    </p>
+                </div>
+
+                <div class="product-details">
+                    <h3>Product Details</h3>
+                    <ul>
+                        <li><strong>Origin:</strong> Colombia / Ethiopia / Brazil (update this)</li>
+                        <li><strong>Roast Level:</strong> Light / Medium / Dark (update this)</li>
+                        <li><strong>Tasting Notes:</strong> Chocolate, Caramel, Nuts (update this)</li>
+                        <li><strong>Process:</strong> Washed / Natural / Honey (update this)</li>
+                        <li><strong>Weight:</strong> 12 oz / 340g (update this)</li>
+                        <li><strong>Best For:</strong> Espresso / Pour Over / French Press (update this)</li>
+                    </ul>
+                </div>
+
+                <button class="add-to-cart-large" onclick="addToCart('Coffee Bean Bag 1', 0.00)">
+                    Add to Cart
+                </button>
+
+                <div class="product-note">
+                    <p>✨ Freshly roasted to order and shipped within 48 hours</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Additional Info Section -->
+    <section class="additional-info">
+        <div class="info-container">
+            
+            <div class="info-card">
+                <h3>☕ Brewing Tips</h3>
+                <p>
+                    For best results, use 1-2 tablespoons of coffee per 6 oz of water. 
+                    Adjust to taste. Grind just before brewing for maximum freshness. 
+                    Water temperature should be between 195-205°F.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>🌱 Our Story</h3>
+                <p>
+                    Share the story of this particular coffee here. Where does it come from? 
+                    What makes it unique? Talk about the farmers, the region, or your roasting 
+                    process that makes this coffee special.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h3>📦 Shipping & Storage</h3>
+                <p>
+                    Store in a cool, dry place away from direct sunlight. For optimal freshness, 
+                    consume within 2-4 weeks of roast date. We ship within 1-2 business days. 
+                    Local pickup available at our shop.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products">
+        <h2>You Might Also Like</h2>
+        <div class="related-grid">
+            
+            <a href="product-2.html" class="related-card">
+                <div class="related-image" style="background-image: url('images/product-2.jpg');"></div>
+                <h4>Coffee Bean Bag 2</h4>
+                <p class="related-price">$XX.XX</p>
+            </a>
+
+            <a href="product-3.html" class="related-card">
+                <div class="related-image" style="background-image: url('images/product-3.jpg');"></div>
+                <h4>Coffee Bean Bag 3</h4>
+                <p class="related-price">$XX.XX</p>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button onclick="toggleCart()" class="close-cart">✕</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">$0.00</span>
+            </div>
+            <a href="https://square.link/u/YOUR_SQUARE_LINK" target="_blank" class="checkout-button" id="checkout-button">
+                Checkout with Square
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Your Coffee Shop Name. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="product-page.js"></script>
+</body>
+</html>
